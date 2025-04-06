@@ -1,0 +1,7 @@
+procs:
+  Host:
+    shell: yarn workspace host start
+    stop: SIGKILL
+  Auth:
+    shell: yarn workspace auth start
+    stop: SIGKILL

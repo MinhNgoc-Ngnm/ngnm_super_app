@@ -1,0 +1,14 @@
+{
+  "name": "rn_super_app_sdk",
+  "version": "0.0.1",
+  "description": "Dependency management & utils for ngnm_super_app",
+  "main": "index.js",
+  "files": [
+    "lib",
+    "index.js",
+    "preset.js"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

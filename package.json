@@ -1,0 +1,35 @@
+{
+  "name": "ngnm_super_app",
+  "version": "1.0.0",
+  "author": "ngnm1009@gmail.com",
+  "license": "MIT",
+  "keywords": [
+    "React-Native",
+    "RePack",
+    "SuperApp"
+  ],
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "engineStrict": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "mprocs -c mprocs/host.yaml",
+    "run:host:ios": "yarn workspace host ios",
+    "pods": "yarn workspaces foreach --all --exclude sdk run pods",
+    "pods:update": "yarn workspaces foreach --all --exclude sdk run pods:update",
+    "lint": "yarn workspaces foreach --all --exclude sdk run lint",
+    "test": "yarn workspaces foreach --all --exclude sdk run test",
+    "typecheck": "yarn workspaces foreach --all --exclude sdk run typecheck",
+    "align-deps": "yarn workspaces foreach --all --exclude sdk run align-deps",
+    "check-deps": "yarn workspaces foreach --all --exclude sdk run check-deps"
+  },
+  "dependencies": {
+    "mprocs": "^0.7.2"
+  },
+  "packageManager": "yarn@4.8.1"
+}

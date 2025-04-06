@@ -1,0 +1,162 @@
+{
+  "react": {
+    "name": "react",
+    "version": "19.0.0"
+  },
+  "react-native": {
+    "name": "react-native",
+    "version": "0.78.2"
+  },
+  "@react-native-async-storage/async-storage": {
+    "name": "@react-native-async-storage/async-storage",
+    "version": "2.1.2"
+  },
+  "@react-navigation/bottom-tabs": {
+    "name": "@react-navigation/bottom-tabs",
+    "version": "7.3.3"
+  },
+  "@react-navigation/drawer": {
+    "name": "@react-navigation/drawer",
+    "version": "7.3.2"
+  },
+  "@react-navigation/material-top-tabs": {
+    "name": "@react-navigation/material-top-tabs",
+    "version": "7.2.3"
+  },
+  "@react-navigation/native": {
+    "name": "@react-navigation/native",
+    "version": "7.0.19"
+  },
+  "@react-navigation/native-stack": {
+    "name": "@react-navigation/native-stack",
+    "version": "7.3.3"
+  },
+  "@react-navigation/stack": {
+    "name": "@react-navigation/stack",
+    "version": "7.2.3"
+  },
+  "@shopify/flash-list": {
+    "name": "@shopify/flash-list",
+    "version": "1.7.6"
+  },
+  "@shopify/react-native-skia": {
+    "name": "@shopify/react-native-skia",
+    "version": "1.12.0"
+  },
+  "axios": {
+    "name": "axios",
+    "version": "1.8.4"
+  },
+  "lodash": {
+    "name": "lodash",
+    "version": "4.17.21"
+  },
+  "moment": {
+    "name": "moment",
+    "version": "2.30.1"
+  },
+  "react-native-edge-to-edge": {
+    "name": "react-native-edge-to-edge",
+    "version": "1.4.3"
+  },
+  "react-native-fast-image": {
+    "name": "react-native-fast-image",
+    "version": "8.6.3"
+  },
+  "react-native-gesture-handler": {
+    "name": "react-native-gesture-handler",
+    "version": "2.24.0"
+  },
+  "react-native-gifted-chat": {
+    "name": "react-native-gifted-chat",
+    "version": "2.8.0"
+  },
+  "react-native-inner-shadow": {
+    "name": "react-native-inner-shadow",
+    "version": "2.2.0"
+  },
+  "react-native-keyboard-controller": {
+    "name": "react-native-keyboard-controller",
+    "version": "1.16.8"
+  },
+  "react-native-modalfy": {
+    "name": "react-native-modalfy",
+    "version": "3.6.0"
+  },
+  "react-native-pager-view": {
+    "name": "react-native-pager-view",
+    "version": "6.7.0"
+  },
+  "react-native-paper": {
+    "name": "react-native-paper",
+    "version": "5.13.1"
+  },
+  "react-native-reanimated": {
+    "name": "react-native-reanimated",
+    "version": "3.17.1"
+  },
+  "react-native-safe-area-context": {
+    "name": "react-native-safe-area-context",
+    "version": "5.3.0"
+  },
+  "react-native-screens": {
+    "name": "react-native-screens",
+    "version": "4.9.2"
+  },
+  "react-native-svg": {
+    "name": "react-native-svg",
+    "version": "15.11.2"
+  },
+  "react-native-vector-icons": {
+    "name": "react-native-vector-icons",
+    "version": "10.2.0"
+  },
+  "react-native-video": {
+    "name": "react-native-video",
+    "version": "6.11.0"
+  },
+  "react-native-size-matters": {
+    "name": "react-native-size-matters",
+    "version": "0.4.2"
+  },
+  "yup": {
+    "name": "yup",
+    "version": "1.6.1"
+  },
+  "formik": {
+    "name": "formik",
+    "version": "2.4.6"
+  },
+  "@module-federation/enhanced": {
+    "name": "@module-federation/enhanced",
+    "version": "^0.11.3"
+  },
+  "zustand": {
+    "name": "zustand",
+    "version": "^5.0.3"
+  },
+  "react-native-modalize": {
+    "name": "react-native-modalize",
+    "version": "^2.1.0"
+  },
+  "react-native-portalize": {
+    "name": "react-native-portalize",
+    "version": "^1.0.7"
+  },
+  "@react-native-firebase/app": {
+    "name": "@react-native-firebase/app",
+    "version": "^21.13.0"
+  },
+  "@react-native-firebase/analytics": {
+    "name": "@react-native-firebase/analytics",
+    "version": "^21.13.0"
+  },
+  "@react-native-firebase/auth": {
+    "name": "@react-native-firebase/auth",
+    "version": "^21.13.0"
+  },
+  "@react-native-firebase/messaging": {
+    "name": "@react-native-firebase/messaging",
+    "version": "^21.13.0"
+  }
+}

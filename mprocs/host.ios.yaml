@@ -1,0 +1,7 @@
+procs:
+  Host:
+    shell: yarn workspace host start --platform ios
+    stop: SIGKILL
+  Auth:
+    shell: yarn workspace auth start --platform ios
+    stop: SIGKILL
