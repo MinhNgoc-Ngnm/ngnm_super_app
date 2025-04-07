@@ -38,7 +38,7 @@ export default env => {
         remotes: {
           auth: `auth@http://localhost:9000/${platform}/mf-manifest.json`,
         },
-        // shared: getSharedDependencies({eager: false}),
+        shared: getSharedDependencies({eager: true}),
       }),
       new rspack.IgnorePlugin({
         resourceRegExp: /^@react-native-masked-view/,

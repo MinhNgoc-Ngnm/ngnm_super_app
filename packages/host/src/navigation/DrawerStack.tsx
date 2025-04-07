@@ -12,10 +12,10 @@ import {verticalScale} from 'react-native-size-matters';
 
 const Drawer = createDrawerNavigator<DrawerStackParamList>();
 
-export interface IDrawerStack extends RootStackScreenProp<'DRAWER'> {}
-export type ODrawerStack = {};
+export interface DrawerStackProps extends RootStackScreenProp<'DRAWER'> {}
+export type DrawerStackRef = {};
 
-const DrawerStack = forwardRef<ODrawerStack, IDrawerStack>((props, _ref) => {
+const DrawerStack = forwardRef<DrawerStackRef, DrawerStackProps>((props, _ref) => {
   const {} = props;
 
   const DrawerContent = useCallback((p: DrawerContentComponentProps) => {

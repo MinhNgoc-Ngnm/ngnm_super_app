@@ -12,7 +12,7 @@ const Navigator: React.FC<any> = () => {
     },
   };
   return (
-    <NavigationContainer ref={refNavigation} linking={linking} onReady={()=> console.log("AAAAAAA")}>
+    <NavigationContainer ref={refNavigation} linking={linking}>
       <MainStack />
     </NavigationContainer>
   );

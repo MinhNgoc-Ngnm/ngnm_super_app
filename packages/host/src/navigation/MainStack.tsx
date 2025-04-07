@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {RootStackParamList} from './types';
 import {ROUTER_ROOT} from './routers';
@@ -21,4 +21,4 @@ const MainStack = () => {
   );
 };
 
-export default MainStack;
+export default memo(MainStack);

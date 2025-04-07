@@ -11,18 +11,6 @@
     "name": "@react-native-async-storage/async-storage",
     "version": "2.1.2"
   },
-  "@react-navigation/bottom-tabs": {
-    "name": "@react-navigation/bottom-tabs",
-    "version": "7.3.9"
-  },
-  "@react-navigation/drawer": {
-    "name": "@react-navigation/drawer",
-    "version": "7.3.8"
-  },
-  "@react-navigation/material-top-tabs": {
-    "name": "@react-navigation/material-top-tabs",
-    "version": "7.2.9"
-  },
   "@react-navigation/native": {
     "name": "@react-navigation/native",
     "version": "7.1.5"
@@ -33,6 +21,18 @@
   },
   "@react-navigation/stack": {
     "name": "@react-navigation/stack",
+    "version": "7.2.9"
+  },
+  "@react-navigation/bottom-tabs": {
+    "name": "@react-navigation/bottom-tabs",
+    "version": "7.3.9"
+  },
+  "@react-navigation/drawer": {
+    "name": "@react-navigation/drawer",
+    "version": "7.3.8"
+  },
+  "@react-navigation/material-top-tabs": {
+    "name": "@react-navigation/material-top-tabs",
     "version": "7.2.9"
   },
   "@shopify/flash-list": {
