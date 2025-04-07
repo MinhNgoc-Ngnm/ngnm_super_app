@@ -6,7 +6,7 @@ import {UIDevice} from '../common/sizes';
 import dfStyle from '../common/styles';
 import {term} from '../data/term';
 import TouchDebounce from './TouchDebounce';
-import { useModal } from 'react-native-modalfy';
+import {useModal} from 'react-native-modalfy';
 
 export type TermModalProps = {};
 export type TermModalRef = {};
@@ -29,12 +29,14 @@ const TermModal = forwardRef<TermModalRef, TermModalProps>(
         <Text style={styles.term_1}>
           Bằng việc đăng nhập, bạn đã đồng ý với
         </Text>
-        <Text style={styles.term_2}>Điều khoản sử dụng của SUPER APP</Text>
+        <Text style={styles.term_2}>Điều khoản sử dụng của AoT</Text>
         <View style={{height: verticalScale(16)}} />
-        <TouchDebounce style={styles.touch} onPress={()=> {
-          console.log('CLICK');
-          closeModal('TermModal');
-        }}>
+        <TouchDebounce
+          style={styles.touch}
+          onPress={() => {
+            console.log('CLICK');
+            closeModal('TermModal');
+          }}>
           <Text style={styles.touch_text}>Đồng ý</Text>
         </TouchDebounce>
       </View>

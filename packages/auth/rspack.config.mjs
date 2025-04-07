@@ -3,6 +3,7 @@ import {fileURLToPath} from 'node:url';
 import * as Repack from '@callstack/repack';
 import {getSharedDependencies} from 'rn_super_app_sdk';
 import {ReanimatedPlugin} from '@callstack/repack-plugin-reanimated';
+import rspack from '@rspack/core';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -42,6 +43,9 @@ export default env => {
           './AuthProvider': './src/providers/AuthProvider',
         },
         shared: getSharedDependencies({eager: false}),
+      }),
+      new rspack.IgnorePlugin({
+        resourceRegExp: /^@react-native-masked-view/,
       }),
       new Repack.plugins.CodeSigningPlugin({
         enabled: mode === 'production',

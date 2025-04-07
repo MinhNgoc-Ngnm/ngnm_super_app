@@ -1,0 +1,60 @@
+import React, {forwardRef, memo, useCallback} from 'react';
+import {DrawerStackParamList, RootStackScreenProp} from './types';
+import {
+  DrawerContentComponentProps,
+  DrawerContentScrollView,
+  createDrawerNavigator,
+} from '@react-navigation/drawer';
+import {StyleSheet, View, Text} from 'react-native';
+import {ROUTER_DRAWER} from './routers';
+import HomeStack from './HomeStack';
+import {verticalScale} from 'react-native-size-matters';
+
+const Drawer = createDrawerNavigator<DrawerStackParamList>();
+
+export interface IDrawerStack extends RootStackScreenProp<'DRAWER'> {}
+export type ODrawerStack = {};
+
+const DrawerStack = forwardRef<ODrawerStack, IDrawerStack>((props, _ref) => {
+  const {} = props;
+
+  const DrawerContent = useCallback((p: DrawerContentComponentProps) => {
+    return (
+      <View>
+        <DrawerContentScrollView
+          {...p}
+          contentContainerStyle={{
+            paddingTop: verticalScale(10),
+          }}>
+          <Text>asdasd</Text>
+        </DrawerContentScrollView>
+      </View>
+    );
+  }, []);
+  return (
+    <Drawer.Navigator
+      initialRouteName={ROUTER_DRAWER.HOME}
+      screenOptions={{
+        headerShown: false,
+        swipeEnabled: false,
+        drawerActiveBackgroundColor: 'transparent',
+        drawerActiveTintColor: 'transparent',
+        drawerInactiveTintColor: 'transparent',
+        drawerType: 'slide',
+        overlayColor: 'transparent',
+        drawerStyle: {
+          flex: 1,
+          width: '70%',
+          backgroundColor: 'transparent',
+        },
+
+        lazy: true,
+      }}
+      drawerContent={DrawerContent}>
+      <Drawer.Screen name={ROUTER_DRAWER.HOME} component={HomeStack} />
+    </Drawer.Navigator>
+  );
+});
+
+export default memo(DrawerStack);
+const styles = StyleSheet.create({});

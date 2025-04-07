@@ -1,0 +1,17 @@
+diff --git a/src/event-handler.js b/src/event-handler.js
+index f95d0d4a791e34d7bcf20172d31aae6d5029f0ee..b0d61b2266c1a9420f6e2d491ad8ba16e1705cd6 100644
+--- a/src/event-handler.js
++++ b/src/event-handler.js
+@@ -3,11 +3,7 @@ let REACore = null;
+ try {
+   REACore = require("react-native-reanimated/src/core");
+ } catch (e1) {
+-  try {
+-    REACore = require("react-native-reanimated/src/reanimated2/core");
+-  } catch (e2) {
+-    console.warn("Failed to load REACore from both paths");
+-  }
++  console.warn("Failed to load REACore from both paths");
+ }
+ const registerEventHandler = REACore.registerEventHandler;
+ const unregisterEventHandler = REACore.unregisterEventHandler;

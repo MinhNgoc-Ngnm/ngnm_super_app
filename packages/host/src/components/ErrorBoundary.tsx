@@ -1,6 +1,5 @@
 import React from 'react';
 import {StyleSheet, Text, SafeAreaView} from 'react-native';
-import {MD3Colors} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 type Props = {
@@ -33,7 +32,7 @@ class ErrorBoundary extends React.Component<Props, State> {
     if (this.state.hasError) {
       return (
         <SafeAreaView style={styles.container}>
-          <Icon size={96} color={MD3Colors.primary20} name="alert-octagon" />
+          <Icon size={96} color={'#D21F3C'} name="alert-octagon" />
           <Text style={styles.text}>{`Failed to load ${this.name}`}</Text>
         </SafeAreaView>
       );
@@ -48,10 +47,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#000000',
   },
   text: {
     fontSize: 24,
-    color: MD3Colors.primary20,
+    color: '#D21F3C',
     textAlign: 'center',
   },
 });

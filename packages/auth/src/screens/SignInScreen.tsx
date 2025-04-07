@@ -53,9 +53,9 @@ const SignInScreen = () => {
             validateOnMount={false}
             validateOnChange={false}
             onSubmit={async ({email, password}) => {
-              signIn(email, password, (status, data) => {
+              signIn(email, password, (status, _data) => {
                 if (!status) {
-                  setErr(JSON.stringify(data));
+                  setErr('Tài khoản hoặc mật khẩu không chính xác');
                 }
               });
             }}>
@@ -76,9 +76,7 @@ const SignInScreen = () => {
                   />
                   <View style={{height: verticalScale(16)}} />
                   <Text style={styles.welcomeHeadline}>Đăng nhập</Text>
-                  <Text style={styles.welcomeHeadline}>
-                    SUPER APP và trải nghiệm
-                  </Text>
+                  <Text style={styles.welcomeHeadline}>AoT và trải nghiệm</Text>
                   <View style={{height: verticalScale(32)}} />
                   <InputBorder
                     value={values.email}
@@ -114,6 +112,7 @@ const SignInScreen = () => {
                   />
                   <View style={{height: verticalScale(16)}} />
                   {err && <Text style={styles.err_text}>{err}</Text>}
+                  <View style={{height: verticalScale(16)}} />
                   <TouchDebounce
                     style={styles.touchSignin}
                     onPress={() => {
@@ -162,7 +161,7 @@ const SignInScreen = () => {
                     onPress={() => {
                       openModal('TermModal');
                     }}>
-                    Điều khoản sử dụng của SUPER APP
+                    Điều khoản sử dụng của AoT
                   </Text>
                 </View>
               );
@@ -254,6 +253,7 @@ const styles = StyleSheet.create({
   err_text: {
     fontSize: moderateScale(12, 0.3),
     lineHeight: moderateScale(18, 0.3),
+    textAlign: 'center',
     color: '#FF3B30',
   },
 });

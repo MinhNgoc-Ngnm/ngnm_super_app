@@ -1,5 +1,5 @@
-import React from 'react';
-import auth from '@react-native-firebase/auth';
+import React, {useCallback} from 'react';
+import {getAuth} from '@react-native-firebase/auth';
 import {AuthContext} from '../contexts/AuthContext';
 import AuthService from '../services/AuthService';
 
@@ -45,13 +45,29 @@ const reducer = (prevState: State, action: Action): State => {
 const AuthProvider = ({
   children,
 }: {
-  children: (data: State) => React.ReactNode;
+  children: (
+    data: State,
+    signOut: (callback: (status: boolean, data: any) => void) => {},
+  ) => React.ReactNode;
 }) => {
   const [state, dispatch] = React.useReducer(reducer, {
     isLoading: true,
     isSignout: false,
   });
-
+  const signOut = useCallback(
+    async (callback: (status: boolean, data: any) => void) => {
+      try {
+        await getAuth().signOut();
+        await AuthService.shared.removeCredentials();
+        dispatch({type: ActionTypes.SIGN_OUT});
+        callback(true, {});
+      } catch (e) {
+        console.error('SignOut error:', e);
+        callback(false, e);
+      }
+    },
+    [],
+  );
   const authContext = React.useMemo(
     () => ({
       signIn: async (
@@ -60,7 +76,7 @@ const AuthProvider = ({
         callback: (status: boolean, data: any) => void,
       ) => {
         try {
-          const result = await auth().signInWithEmailAndPassword(
+          const result = await getAuth().signInWithEmailAndPassword(
             email,
             password,
           );
@@ -73,24 +89,14 @@ const AuthProvider = ({
           callback(false, e);
         }
       },
-      signOut: async (callback: (status: boolean, data: any) => void) => {
-        try {
-          await auth().signOut();
-          await AuthService.shared.removeCredentials();
-          dispatch({type: ActionTypes.SIGN_OUT});
-          callback(true, {});
-        } catch (e) {
-          console.error('SignOut error:', e);
-          callback(false, e);
-        }
-      },
+      signOut: signOut,
       signUp: async (
         email: string,
         password: string,
         callback: (status: boolean, data: any) => void,
       ) => {
         try {
-          const result = await auth().createUserWithEmailAndPassword(
+          const result = await getAuth().createUserWithEmailAndPassword(
             email,
             password,
           );
@@ -104,10 +110,10 @@ const AuthProvider = ({
         }
       },
     }),
-    [],
+    [signOut],
   );
   React.useEffect(() => {
-    const unsubscribe = auth().onAuthStateChanged(async user => {
+    const unsubscribe = getAuth().onAuthStateChanged(async user => {
       if (user) {
         dispatch({type: ActionTypes.RESTORE_TOKEN, payload: false});
       } else {
@@ -120,7 +126,7 @@ const AuthProvider = ({
 
   return (
     <AuthContext.Provider value={authContext}>
-      {children(state)}
+      {children(state, signOut)}
     </AuthContext.Provider>
   );
 };
