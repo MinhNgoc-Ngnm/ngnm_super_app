@@ -158,5 +158,9 @@
   "@react-native-firebase/messaging": {
     "name": "@react-native-firebase/messaging",
     "version": "^21.13.0"
+  },
+  "rive-react-native": {
+    "name": "rive-react-native",
+    "version": "^9.2.1"
   }
 }

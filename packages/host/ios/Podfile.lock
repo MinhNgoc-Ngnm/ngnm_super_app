@@ -1879,6 +1879,10 @@ PODS:
     - React-perflogger (= 0.78.2)
     - React-utils (= 0.78.2)
   - RecaptchaInterop (101.0.0)
+  - rive-react-native (9.2.1):
+    - React-Core
+    - RiveRuntime (= 6.7.4)
+  - RiveRuntime (6.7.4)
   - RNCAsyncStorage (2.1.2):
     - DoubleConversion
     - glog
@@ -2277,6 +2281,7 @@ DEPENDENCIES:
   - ReactAppDependencyProvider (from `build/generated/ios`)
   - ReactCodegen (from `build/generated/ios`)
   - ReactCommon/turbomodule/core (from `../../../node_modules/react-native/ReactCommon`)
+  - rive-react-native (from `../../../node_modules/rive-react-native`)
   - "RNCAsyncStorage (from `../../../node_modules/@react-native-async-storage/async-storage`)"
   - RNFastImage (from `../../../node_modules/react-native-fast-image`)
   - "RNFBAnalytics (from `../../../node_modules/@react-native-firebase/analytics`)"
@@ -2312,6 +2317,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - RecaptchaInterop
+    - RiveRuntime
     - SDWebImage
     - SDWebImageWebPCoder
     - SocketRocket
@@ -2461,6 +2467,8 @@ EXTERNAL SOURCES:
     :path: build/generated/ios
   ReactCommon:
     :path: "../../../node_modules/react-native/ReactCommon"
+  rive-react-native:
+    :path: "../../../node_modules/rive-react-native"
   RNCAsyncStorage:
     :path: "../../../node_modules/@react-native-async-storage/async-storage"
   RNFastImage:
@@ -2579,6 +2587,8 @@ SPEC CHECKSUMS:
   ReactCodegen: 57c54380cb68269ec34dd9ac02f76a562a2cc9fc
   ReactCommon: 0adf8f24a3415b6815613bad362d390726b33fc7
   RecaptchaInterop: 11e0b637842dfb48308d242afc3f448062325aba
+  rive-react-native: 7d5145e9581744c0849f3153320b8a24f96f07f3
+  RiveRuntime: 1748a5e12764dbb732894ac719691f6abd4cad22
   RNCAsyncStorage: 5321442ed26760d7581b26effab82399ea5ff18b
   RNFastImage: 462a183c4b0b6b26fdfd639e1ed6ba37536c3b87
   RNFBAnalytics: 3a15852b35e9ce00facac8cf5182ad33086231f6
