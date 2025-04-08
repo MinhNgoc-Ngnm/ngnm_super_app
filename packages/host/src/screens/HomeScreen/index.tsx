@@ -13,6 +13,7 @@ import {verticalScale} from 'react-native-size-matters';
 import ActionBar from './components/ActionBar';
 import Avatar from './components/Avatar';
 import DataUsageInfo from './components/DataUsageInfo';
+import Rive, {Fit} from 'rive-react-native';
 
 export interface HomeScreenProps extends HomeStackScreenProps<'HOME_SCREEN'> {}
 export type HomeScreenRef = {};
@@ -22,11 +23,7 @@ const HomeScreen = forwardRef<HomeScreenRef, HomeScreenProps>((props, _ref) => {
   const insets = useSafeAreaInsets();
   return (
     <View style={[styles.root]}>
-      <Image
-        source={require('../../assets/images/wall.jpg')}
-        style={styles.wall}
-        resizeMode="cover"
-      />
+      <Rive resourceName="light" style={styles.wall} fit={Fit.Fill} />
       <ActionBar />
       <ScrollView
         refreshControl={
@@ -58,7 +55,7 @@ const styles = StyleSheet.create({
   },
   scroll: {
     flex: 1,
-    marginTop: verticalScale(16),
+    marginTop: verticalScale(80),
   },
   scroll_content: {
     flexGrow: 1,

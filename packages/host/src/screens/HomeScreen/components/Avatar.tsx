@@ -11,12 +11,15 @@ const Avatar = forwardRef<AvatarRef, AvatarProps>((props, _ref) => {
   const {} = props;
   return (
     <View style={styles.root}>
-      <Icon name="account-circle-outline" size={scale(40)} color={'#FFFFFF'} />
-
+      <Icon
+        name="account-circle-outline"
+        size={moderateScale(40)}
+        color={'#FFFFFF'}
+      />
       <View style={styles.left_container}>
         <Text style={styles.txt_name}>Phạm Minh Ngọc</Text>
         <TouchDebounce style={styles.touch_ranking}>
-          <Icon name="chess-queen" size={scale(20)} color={'#D21F3C'} />
+          <Icon name="chess-queen" size={moderateScale(20)} color={'#D21F3C'} />
           <Text style={styles.touch_txt}>Avatar</Text>
         </TouchDebounce>
       </View>
@@ -30,10 +33,10 @@ const styles = StyleSheet.create({
   root: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginHorizontal: moderateScale(16),
+    marginHorizontal: scale(16),
   },
   left_container: {
-    marginLeft: moderateScale(16),
+    marginLeft: scale(16),
     justifyContent: 'space-between',
     alignItems: 'flex-start',
   },
@@ -48,8 +51,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#FFFFFF',
-    borderRadius: 12,
-    paddingHorizontal: moderateScale(8),
+    borderRadius: moderateScale(12),
+    paddingHorizontal: scale(8),
     paddingVertical: verticalScale(2),
   },
   touch_txt: {

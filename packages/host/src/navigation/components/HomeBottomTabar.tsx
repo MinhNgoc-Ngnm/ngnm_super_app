@@ -5,18 +5,19 @@ import {Path, Svg} from 'react-native-svg';
 import Rive from 'rive-react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import TouchDebounce from '../../components/Touch/TouchDebounce';
+import {moderateScale, verticalScale} from 'react-native-size-matters';
 
 export interface HomeBottomTabarProps extends BottomTabBarProps {}
 export type HomeBottomTabarRef = {};
 
 const HomeBottomTabar = forwardRef<HomeBottomTabarRef, HomeBottomTabarProps>(
   (props, _ref) => {
-    const {insets, state} = props;
+    const {insets} = props;
 
     const WIDTH = Dimensions.get('window').width;
-    const HEIGHT = 48 + insets.bottom + 10;
-    const CORNER_RADIUS = 8;
-    const CUTOUT_RADIUS = 48;
+    const HEIGHT = verticalScale(48) + insets.bottom + 10;
+    const CORNER_RADIUS = moderateScale(8);
+    const CUTOUT_RADIUS = moderateScale(48);
     const CUTOUT_LEFT_X = WIDTH / 2 - CUTOUT_RADIUS;
     const CUTOUT_RIGHT_X = WIDTH / 2 + CUTOUT_RADIUS;
     const d = `
@@ -43,26 +44,30 @@ Z
         </TouchDebounce>
         <View style={styles.tab}>
           <TouchDebounce style={styles.touch}>
-            <Icon name="home" size={24} color={'#FFFFFF'} />
+            <Icon name="home" size={moderateScale(24)} color={'#FFFFFF'} />
             <Text numberOfLines={1} style={styles.touch_text}>
               Trang chủ
             </Text>
           </TouchDebounce>
           <TouchDebounce style={styles.touch}>
-            <Icon name="apps-box" size={24} color={'#FFFFFF'} />
+            <Icon name="apps-box" size={moderateScale(24)} color={'#FFFFFF'} />
             <Text numberOfLines={1} style={styles.touch_text}>
               Ứng dụng
             </Text>
           </TouchDebounce>
           <View style={styles.w_96} pointerEvents="none" />
           <TouchDebounce style={styles.touch}>
-            <Icon name="account-box" size={24} color={'#FFFFFF'} />
+            <Icon
+              name="account-box"
+              size={moderateScale(24)}
+              color={'#FFFFFF'}
+            />
             <Text numberOfLines={1} style={styles.touch_text}>
               Tài khoản
             </Text>
           </TouchDebounce>
           <TouchDebounce style={styles.touch}>
-            <Icon name="cog" size={24} color={'#FFFFFF'} />
+            <Icon name="cog" size={moderateScale(24)} color={'#FFFFFF'} />
             <Text numberOfLines={1} style={styles.touch_text}>
               Cài đặt
             </Text>
@@ -94,14 +99,14 @@ const styles = StyleSheet.create({
     zIndex: 1,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    height: 48 + 10,
+    height: verticalScale(48) + 10,
   },
   qr_container: {
-    width: 80,
-    height: 80,
-    borderRadius: 80,
+    width: moderateScale(80),
+    height: moderateScale(80),
+    borderRadius: moderateScale(80),
     position: 'absolute',
-    top: -40,
+    top: moderateScale(-40),
     left: '50%',
     backgroundColor: '#141414',
     zIndex: 2,
@@ -115,8 +120,8 @@ const styles = StyleSheet.create({
     ],
   },
   qr: {
-    width: 45,
-    height: 45,
+    width: moderateScale(45),
+    height: moderateScale(45),
   },
   touch: {
     flex: 1,
@@ -124,12 +129,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   touch_text: {
-    fontSize: 10,
-    lineHeight: 12,
+    fontSize: moderateScale(10, 0.3),
+    lineHeight: moderateScale(16, 0.3),
     color: '#FFFFFF',
     fontWeight: '600',
   },
   w_96: {
-    width: 96,
+    width: moderateScale(96),
   },
 });

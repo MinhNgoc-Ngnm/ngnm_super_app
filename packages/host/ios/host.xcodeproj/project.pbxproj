@@ -12,6 +12,8 @@
 		5E1129EE1F5F32D23066C4CC /* Pods_host.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E382F4DF9EDEBB89C0D5F2BA /* Pods_host.framework */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		F59742F12DA5631700C3C4BF /* light.riv in Resources */ = {isa = PBXBuildFile; fileRef = F59742F02DA5631700C3C4BF /* light.riv */; };
+		F59742F32DA5632B00C3C4BF /* cat_in_the_dark.riv in Resources */ = {isa = PBXBuildFile; fileRef = F59742F22DA5632B00C3C4BF /* cat_in_the_dark.riv */; };
 		F5F97B082DA4D53B00A79B67 /* scan_qr.riv in Resources */ = {isa = PBXBuildFile; fileRef = F5F97B072DA4D53B00A79B67 /* scan_qr.riv */; };
 		F5FB96872DA40B8F00646D62 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5FB96862DA40B8F00646D62 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -27,6 +29,8 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = host/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E382F4DF9EDEBB89C0D5F2BA /* Pods_host.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_host.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F59742F02DA5631700C3C4BF /* light.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = light.riv; sourceTree = "<group>"; };
+		F59742F22DA5632B00C3C4BF /* cat_in_the_dark.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = cat_in_the_dark.riv; sourceTree = "<group>"; };
 		F5F97B072DA4D53B00A79B67 /* scan_qr.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = scan_qr.riv; sourceTree = "<group>"; };
 		F5FB96862DA40B8F00646D62 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,6 +111,8 @@
 		F5F97B062DA4D51B00A79B67 /* Assest */ = {
 			isa = PBXGroup;
 			children = (
+				F59742F22DA5632B00C3C4BF /* cat_in_the_dark.riv */,
+				F59742F02DA5631700C3C4BF /* light.riv */,
 				F5F97B072DA4D53B00A79B67 /* scan_qr.riv */,
 			);
 			path = Assest;
@@ -175,6 +181,8 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				F5FB96872DA40B8F00646D62 /* GoogleService-Info.plist in Resources */,
+				F59742F12DA5631700C3C4BF /* light.riv in Resources */,
+				F59742F32DA5632B00C3C4BF /* cat_in_the_dark.riv in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				F5F97B082DA4D53B00A79B67 /* scan_qr.riv in Resources */,
 				232A70269D3AF474F989B616 /* PrivacyInfo.xcprivacy in Resources */,
@@ -306,8 +314,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ngnm.super-app";
 				PRODUCT_NAME = host;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -334,7 +345,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ngnm.super-app";
 				PRODUCT_NAME = host;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
