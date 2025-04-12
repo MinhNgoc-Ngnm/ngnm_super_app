@@ -46,7 +46,7 @@ const DrawerStack = forwardRef<DrawerStackRef, DrawerStackProps>(
             overlayColor: 'transparent',
             drawerStyle: {
               flex: 1,
-              width: '70%',
+              width: '60%',
               backgroundColor: 'transparent',
             },
             sceneStyle: {

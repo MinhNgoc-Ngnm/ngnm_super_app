@@ -15,4 +15,7 @@ export const ROUTER_DRAWER: Entries<DrawerStackParamList> = {
 };
 export const ROUTER_HOME: Entries<HomeStackParamList> = {
   HOME_SCREEN: 'HOME_SCREEN',
+  MINI_APP_SCREEN: 'MINI_APP_SCREEN',
+  PROFILE_SCREEN: 'PROFILE_SCREEN',
+  SETTINGS_SCREEN: 'SETTINGS_SCREEN',
 };

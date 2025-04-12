@@ -6,14 +6,16 @@ import Rive from 'rive-react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import TouchDebounce from '../../components/Touch/TouchDebounce';
 import {moderateScale, verticalScale} from 'react-native-size-matters';
+import {ROUTER_HOME} from '../routers';
 
 export interface HomeBottomTabarProps extends BottomTabBarProps {}
 export type HomeBottomTabarRef = {};
 
 const HomeBottomTabar = forwardRef<HomeBottomTabarRef, HomeBottomTabarProps>(
   (props, _ref) => {
-    const {insets} = props;
-
+    const {insets, state, navigation} = props;
+    const {index, routeNames} = state;
+    const routerName = routeNames?.[index];
     const WIDTH = Dimensions.get('window').width;
     const HEIGHT = verticalScale(48) + insets.bottom + 10;
     const CORNER_RADIUS = moderateScale(8);
@@ -43,38 +45,96 @@ Z
           <Rive resourceName="scan_qr" style={styles.qr} />
         </TouchDebounce>
         <View style={styles.tab}>
-          <TouchDebounce style={styles.touch}>
-            <Icon name="home" size={moderateScale(24)} color={'#FFFFFF'} />
-            <Text numberOfLines={1} style={styles.touch_text}>
+          <TouchDebounce
+            style={[styles.touch]}
+            onPress={() => navigation.navigate(ROUTER_HOME.HOME_SCREEN)}>
+            <Icon
+              name="home"
+              size={moderateScale(24)}
+              color={
+                routerName === ROUTER_HOME.HOME_SCREEN ? '#D21F3C' : '#B0B0B8'
+              }
+            />
+            <Text
+              numberOfLines={1}
+              style={[
+                styles.touch_text,
+                routerName === ROUTER_HOME.HOME_SCREEN &&
+                  styles.touch_text_selected,
+              ]}>
               Trang chủ
             </Text>
           </TouchDebounce>
-          <TouchDebounce style={styles.touch}>
-            <Icon name="apps-box" size={moderateScale(24)} color={'#FFFFFF'} />
-            <Text numberOfLines={1} style={styles.touch_text}>
+          <TouchDebounce
+            style={styles.touch}
+            onPress={() => navigation.navigate(ROUTER_HOME.MINI_APP_SCREEN)}>
+            <Icon
+              name="apps-box"
+              size={moderateScale(24)}
+              color={
+                routerName === ROUTER_HOME.MINI_APP_SCREEN
+                  ? '#D21F3C'
+                  : '#B0B0B8'
+              }
+            />
+            <Text
+              numberOfLines={1}
+              style={[
+                styles.touch_text,
+                routerName === ROUTER_HOME.MINI_APP_SCREEN &&
+                  styles.touch_text_selected,
+              ]}>
               Ứng dụng
             </Text>
           </TouchDebounce>
           <View style={styles.w_96} pointerEvents="none" />
-          <TouchDebounce style={styles.touch}>
+          <TouchDebounce
+            style={styles.touch}
+            onPress={() => navigation.navigate(ROUTER_HOME.PROFILE_SCREEN)}>
             <Icon
               name="account-box"
               size={moderateScale(24)}
-              color={'#FFFFFF'}
+              color={
+                routerName === ROUTER_HOME.PROFILE_SCREEN
+                  ? '#D21F3C'
+                  : '#B0B0B8'
+              }
             />
-            <Text numberOfLines={1} style={styles.touch_text}>
+            <Text
+              numberOfLines={1}
+              style={[
+                styles.touch_text,
+                routerName === ROUTER_HOME.PROFILE_SCREEN &&
+                  styles.touch_text_selected,
+              ]}>
               Tài khoản
             </Text>
           </TouchDebounce>
-          <TouchDebounce style={styles.touch}>
-            <Icon name="cog" size={moderateScale(24)} color={'#FFFFFF'} />
-            <Text numberOfLines={1} style={styles.touch_text}>
+          <TouchDebounce
+            style={styles.touch}
+            onPress={() => navigation.navigate(ROUTER_HOME.SETTINGS_SCREEN)}>
+            <Icon
+              name="cog"
+              size={moderateScale(24)}
+              color={
+                routerName === ROUTER_HOME.SETTINGS_SCREEN
+                  ? '#D21F3C'
+                  : '#B0B0B8'
+              }
+            />
+            <Text
+              numberOfLines={1}
+              style={[
+                styles.touch_text,
+                routerName === ROUTER_HOME.SETTINGS_SCREEN &&
+                  styles.touch_text_selected,
+              ]}>
               Cài đặt
             </Text>
           </TouchDebounce>
         </View>
         <Svg width={WIDTH} height={HEIGHT}>
-          <Path d={d} fill="#141414" />
+          <Path d={d} fill="#101010CC" />
         </Svg>
       </View>
     );
@@ -108,7 +168,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: moderateScale(-40),
     left: '50%',
-    backgroundColor: '#141414',
+    backgroundColor: '#101010CC',
     zIndex: 2,
     justifyContent: 'center',
     alignItems: 'center',
@@ -131,8 +191,11 @@ const styles = StyleSheet.create({
   touch_text: {
     fontSize: moderateScale(10, 0.3),
     lineHeight: moderateScale(16, 0.3),
-    color: '#FFFFFF',
+    color: '#B0B0B8',
     fontWeight: '600',
+  },
+  touch_text_selected: {
+    color: '#D21F3C',
   },
   w_96: {
     width: moderateScale(96),

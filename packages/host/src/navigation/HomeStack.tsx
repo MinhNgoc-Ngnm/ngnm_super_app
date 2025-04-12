@@ -13,6 +13,9 @@ import {StyleSheet, Text, View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeBottomTabar from './components/HomeBottomTabar';
 import HomeScreen from '../screens/HomeScreen';
+import MiniAppScreen from '../screens/MiniAppScreen';
+import ProfileScreen from '../screens/ProfileScreen';
+import SettingScreen from '../screens/SettingScreen';
 
 const Stack = createBottomTabNavigator<HomeStackParamList>();
 
@@ -57,6 +60,18 @@ const HomeStack = forwardRef<HomeStackScreenRef, HomeStackScreenProps>(
             },
           }}>
           <Stack.Screen name={ROUTER_HOME.HOME_SCREEN} component={HomeScreen} />
+          <Stack.Screen
+            name={ROUTER_HOME.MINI_APP_SCREEN}
+            component={MiniAppScreen}
+          />
+          <Stack.Screen
+            name={ROUTER_HOME.PROFILE_SCREEN}
+            component={ProfileScreen}
+          />
+          <Stack.Screen
+            name={ROUTER_HOME.SETTINGS_SCREEN}
+            component={SettingScreen}
+          />
         </Stack.Navigator>
       </Animated.View>
     );

@@ -20,7 +20,7 @@ const Avatar = forwardRef<AvatarRef, AvatarProps>((props, _ref) => {
         <Text style={styles.txt_name}>Phạm Minh Ngọc</Text>
         <TouchDebounce style={styles.touch_ranking}>
           <Icon name="chess-queen" size={moderateScale(20)} color={'#D21F3C'} />
-          <Text style={styles.touch_txt}>Avatar</Text>
+          <Text style={styles.touch_txt}>Hạng vàng</Text>
         </TouchDebounce>
       </View>
     </View>
